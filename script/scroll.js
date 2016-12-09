@@ -1,1 +1,0 @@
-$('html, body').animate({scrollTop: '+=100'}, 800)

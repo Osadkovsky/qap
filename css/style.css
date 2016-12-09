@@ -8,7 +8,7 @@ body {
     width: 100%;
     height: 120px;
     background-color: #ffffff;
-    margin: 0px 0px 4px 0px;
+    margin: 0px 0px 15px 0px;
     border-width: 0px 0px 1px 0px;
     border-color: #a8a8a8;
     border-style: solid;
@@ -52,7 +52,6 @@ body {
     float:left;
     width:300px;
     margin-right:15px;
-    
     border-top: 0px;
 }
 
@@ -70,25 +69,25 @@ body {
     border: 1px;
 }
 
-.col-body {
+.col-container {
     height: 375px;
-    padding-top: 20px;
-    border: 1px;
-    border-color: #dcdcdc;
-    background-color: #ffffff;
+    background:#fff;
+    border: solid #dcdcdc; 
+    border-width: 1px 1px 0px 1px;
+    padding: 34px 16px 0px 0px;
 }
 
 .clearfix {
     overflow: both;
 }
 
-.col-footer {
-    border: 1px solid #dcdcdc;
-    background-color: #ffffff;
-}
 
 .col-s10 {
     height: 50px    
+}
+
+.row {
+    margin: 9px 0px 9px 0px;
 }
 
 .media-item {
@@ -99,27 +98,68 @@ body {
 }
 
 .media-item__cbox {
+    display: inline-block;
     float: left;
     padding-left: 15px;
-    width: 20px;
-    height: 20px;
-    display: block;
-    background: "check.jpg";
+    width: 16px;
+    height: 16px;   
 }
 
-.media-item__cbox input:checked + span {
-    background: url("link_to_another_image");
+.filled-in {    
+    display: inline-block;
+    width: 17px;
+    height: 17px;
 }
+
+
+.filled-in + label {
+  cursor: pointer;
+}
+
+/* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
+Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
+в них все нижеследующие стили не сработают. */
+
+/* Прячем оригинальный чекбокс. */
+.checkbox_doc:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox_doc:not(checked) + label {
+  position: relative; /* будем позиционировать псевдочекбокс относительно label */
+  padding: 0 0 0 0px; /* оставляем слева от label место под псевдочекбокс */
+}
+/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+.checkbox_doc:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url(img/check3.png) 0px 0px;
+}
+/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
+.checkbox_doc:not(checked) + label:after {
+    content: ''; 
+    position: absolute;
+}
+/* Меняем фон чекбокса, когда он включен. */
+.checkbox_doc:checked + label:before {
+    content: ''; 
+    position: absolute;
+    background-position:-19px 0px;
+}
+/* Сдвигаем переключатель чекбокса, когда он включен. */
+
 
 .media-item__title {
-    font-family: roboto; 
+    font-family: Roboto;
     font-size: 13pt;
-    font-color: #8b8b8b;
-    display: inline-block;
-    padding-left: 20px;
+    color: #8b8b8b;
+    padding-left: 55px;
     margin: 0px;
-    margin-top: 5px;
 }
+
 .media-item__content {
     padding-left: 55px;
     font-family: roboto, medium;
@@ -141,8 +181,15 @@ body {
     height: 45px;
     padding: 25px 25px 0px 0px;
     text-align: right;
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid #dcdcdc;
+    background-color: #ffffff;
 }
+
+a{
     
+}    
+
 .col.docs .col-header {
     background:#db4437;
 }
@@ -179,12 +226,7 @@ body {
     background-position:-147px 0px;
 }
 
-.col-body {
-    width:100%;
-    background:#fff;
-}
-
-v.col.docs .col-foorer {
+.col.docs .col-foorer {
     font-color: #db4437;
 }
 

@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>T</title>
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
         <link rel="stylesheet" type="text/css" src="bower_components/bootstrap/bootstrap.css">
-        <link type="text/css" rel="stylesheet" src="bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -25,8 +25,82 @@
                    <div class="col-icon"></div>
                    <div class="col-caption">Documents</div>
                </div>
-               <div class="col-body">
+               <div class="col-container">
                   
+                      <div class="media-item">
+                        <div class="row">
+                           <div class="col s10">
+                              <div class="media-item__cbox"><input id="filled-in-box" type="checkbox" class="filled-in"><label for="filled-in-box"></label></div>
+                              <div class="media-item__title">Article name</div>
+                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
+                           </div>
+                        </div>
+                     </div>
+                      <div class="media-item">
+                        <div class="row">
+                           <div class="col s10">
+                              <div class="media-item__cbox"><input id="filled-in-box" type="checkbox" class="checkbox_doc"><label for="filled-in-box"></label></div>
+                              <div class="media-item__title">Article name</div>
+                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
+                           </div>
+                        </div>
+                     </div>                     <div class="media-item">
+                        <div class="row">
+                           <div class="col s10">
+                              <div class="media-item__cbox"><input id="checkbox_doc" type="checkbox" class="checkbox_doc"><label for="filled-in-box"></label></div>
+                              <div class="media-item__title">Article name</div>
+                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="media-item">
+                        <div class="row">
+                          <div class="col s10">
+                              <div class="media-item__cbox"><input id="checkbox_doc" type="checkbox" class="checkbox_doc"><label for="filled-in-box"></label></div>
+                              <div class="media-item__title">Article name</div>
+                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
+                          </div>
+                        </div>
+                     </div>
+                     <div class="media-item">
+                        <div class="row">
+                          <div class="col s10">
+                              <div class="media-item__cbox"><input id="checkbox_doc" type="checkbox" class="checkbox_doc"><label for="filled-in-box"></label></div>
+                              <div class="media-item__title">Article name</div>
+                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
+                          </div>
+                        </div>
+                     </div>
+                     <div class="media-item">
+                        <div class="row">
+                          <div class="col s10">
+                              <div class="media-item__cbox"><input id="checkbox_doc" type="checkbox" class="checkbox_doc"><label for="filled-in-box"></label></div>
+                              <div class="media-item__title">Article name</div>
+                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
+                          </div>
+                        </div>
+                     </div>
+                  
+               </div>
+               <div class="col-footer">
+                  <button class="add-all-link" onclick="myFunction()">ADD ALL</button>
+                </div>
+           </div>
+           <div class="col links">
+               <div class="col-header">
+                   <div class="col-icon"></div>
+                   <div class="col-caption">Links</div>
+               </div>
+               <div class="col-container">
+                     
+                     <div class="media-item">
+                        <div class="row">
+                           <div class="col s10">
+                              <div class="media-item__cbox"><input id="filled-in-box" type="checkbox" class="filled-in"><label for="filled-in-box"></label></div>
+                              <div class="media-item__title">Article name</div>
+                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>                           </div>
+                        </div>
+                     </div>
                      <div class="media-item">
                         <div class="row">
                            <div class="col s10">
@@ -38,50 +112,11 @@
                      </div>
                      <div class="media-item">
                         <div class="row">
-                          <div class="col s10">
-                              <div class="media-item__cbox"><input id="filled-in-box" type="checkbox" class="filled-in"><label for="filled-in-box"></label></div>
-                              <div class="media-item__title">Article name</div>
-                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
-                          </div>
-                        </div>
-                     </div>
-                     <div class="media-item">
-                        <div class="row">
-                          <div class="col s10">
-                              <div class="media-item__cbox"><input id="filled-in-box" type="checkbox" class="filled-in"><label for="filled-in-box"></label></div>
-                              <div class="media-item__title">Article name</div>
-                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
-                          </div>
-                        </div>
-                     </div>
-                     <div class="media-item">
-                        <div class="row">
-                          <div class="col s10">
-                              <div class="media-item__cbox"><input id="filled-in-box" type="checkbox" class="filled-in"><label for="filled-in-box"></label></div>
-                              <div class="media-item__title">Article name</div>
-                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
-                          </div>
-                        </div>
-                     </div>
-                  
-               </div>
-               <div class="col-footer">
-                  <a class="add-all-link">ADD ALL</a>
-                </div>
-           </div>
-           <div class="col links">
-               <div class="col-header">
-                   <div class="col-icon"></div>
-                   <div class="col-caption">Links</div>
-               </div>
-               <div class="col-body">
-                     
-                     <div class="media-item">
-                        <div class="row">
                            <div class="col s10">
                               <div class="media-item__cbox"><input id="filled-in-box" type="checkbox" class="filled-in"><label for="filled-in-box"></label></div>
                               <div class="media-item__title">Article name</div>
-                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>                           </div>
+                              <div class="media-item__content"> www address, (more info?)<br>second line of text</div>
+                           </div>
                         </div>
                      </div>
                      <div class="media-item">
@@ -122,7 +157,7 @@
                    <div class="col-icon"></div>
                    <div class="col-caption">Science Lab</div>
                </div>
-               <div class="col-body">
+               <div class="col-container">
 
                      <div class="media-item">
                         <div class="row">
