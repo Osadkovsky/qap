@@ -16,10 +16,11 @@ body {
     text-align: center;
 }
 
-    h1{
+h1 {
     text-align: center;
     margin: 0;
 }
+
 .brand {
     display: inline-block;
 }
@@ -31,6 +32,7 @@ body {
     font-size: 35.58pt;
     color: #656565;
 }
+
 .brand__part2 {
     display: inline-block;
     padding-top: 29px;
@@ -75,12 +77,41 @@ body {
     border: solid #dcdcdc; 
     border-width: 1px 1px 0px 1px;
     padding: 34px 16px 0px 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}  
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    height: 50px;
+}
+
+.col-container-doc::-webkit-scrollbar-thumb {
+    background: rgba(219, 68, 55, 1); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2); 
+}
+
+.col-container-doc::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(219, 68, 55, 1); 
+} 
+
+
+.col-container-lin::-webkit-scrollbar-thumb {
+    background: rgba(0, 185, 230, 1); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2); 
+}
+
+.col-container-lin::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 185, 230, 1); 
 }
 
 .clearfix {
     overflow: both;
 }
-
 
 .col-s10 {
     height: 50px    
@@ -121,17 +152,53 @@ body {
 в них все нижеследующие стили не сработают. */
 
 /* Прячем оригинальный чекбокс. */
-.checkbox_doc:not(checked) {
+.checkbox__doc:not(checked) {
   position: absolute;
   opacity: 0;
 }
 
-.checkbox_doc:not(checked) + label {
+.checkbox__lin:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox__lab:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox__doc:not(checked) + label {
+  position: relative; /* будем позиционировать псевдочекбокс относительно label */
+  padding: 0 0 0 0px; /* оставляем слева от label место под псевдочекбокс */
+}
+
+.checkbox__lin:not(checked) + label {
+  position: relative; /* будем позиционировать псевдочекбокс относительно label */
+  padding: 0 0 0 0px; /* оставляем слева от label место под псевдочекбокс */
+}
+
+.checkbox__lab:not(checked) + label {
   position: relative; /* будем позиционировать псевдочекбокс относительно label */
   padding: 0 0 0 0px; /* оставляем слева от label место под псевдочекбокс */
 }
 /* Оформление первой части чекбокса в выключенном состоянии (фон). */
-.checkbox_doc:not(checked) + label:before {
+.checkbox__doc:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url(img/check3.png) 0px 0px;
+}
+
+.checkbox__lin:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url(img/check3.png) 0px 0px;
+}
+
+.checkbox__lab:not(checked) + label:before {
     content: '';
     position: absolute;
     width: 16px;
@@ -139,15 +206,38 @@ body {
     background: url(img/check3.png) 0px 0px;
 }
 /* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
-.checkbox_doc:not(checked) + label:after {
+.checkbox__doc:not(checked) + label:after {
     content: ''; 
     position: absolute;
 }
+
+.checkbox__lin:not(checked) + label:after {
+    content: ''; 
+    position: absolute;
+}
+
+.checkbox__lab:not(checked) + label:after {
+    content: ''; 
+    position: absolute;
+}
+
 /* Меняем фон чекбокса, когда он включен. */
-.checkbox_doc:checked + label:before {
+.checkbox__doc:checked + label:before {
     content: ''; 
     position: absolute;
     background-position:-19px 0px;
+}
+
+.checkbox__lin:checked + label:before {
+    content: ''; 
+    position: absolute;
+    background-position:-38px 0px;
+}
+
+.checkbox__lab:checked + label:before {
+    content: ''; 
+    position: absolute;
+    background-position:-58px 0px;
 }
 /* Сдвигаем переключатель чекбокса, когда он включен. */
 
