@@ -80,33 +80,34 @@ h1 {
     overflow-y: auto;
     overflow-x: hidden;
 }  
+.container::-webkit-scrollbar {
+    width: 4px;
+}
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
+
+}
+
+::-webkit-scrollbar-thumb {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-color: #ffffff;
+}
+
+/* Individual scrollbars */
+.col-container.doc::-webkit-scrollbar-thumb {
+    background-color: #db4437;
+}
+.col-container.lin::-webkit-scrollbar-thumb {
+    background-color: #00b9e6;
 }
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    height: 50px;
-}
-
-.col-container-doc::-webkit-scrollbar-thumb {
-    background: rgba(219, 68, 55, 1); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2); 
-}
-
-.col-container-doc::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(219, 68, 55, 1); 
-} 
-
-
-.col-container-lin::-webkit-scrollbar-thumb {
-    background: rgba(0, 185, 230, 1); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2); 
-}
-
-.col-container-lin::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(0, 185, 230, 1); 
+    background: rgba(255,255,255,.5);
 }
 
 .clearfix {
@@ -257,12 +258,25 @@ h1 {
     color: #b2b2b2;
 }
 
-.add-all-link {
+a {
     line-height: 0px;
     font-family: Roboto;
     font-size: 14pt;
     padding-top: 0px;        
 }
+
+.button__doc {
+    color: #db4437;;
+}
+
+.button__lin {
+    color: #00b9e6;;
+}
+
+.button__lab {
+    color: #0f9d58;;
+}
+
 
 .col-footer { 
     border-top: 1px solid #dcdcdc;
